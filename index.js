@@ -15,8 +15,12 @@ module.exports = class {
         return this.#values;
     }
     put(key, value){
-        this.#keys.push(key);
-        this.#values.push(value);
+        if(this.#keys.indexOf(key) != -1){
+            this.#keys.push(key);
+            this.#values.push(value);
+        }else{
+            this.#values[this.#keys.indexOf(key)] = value
+        }
     }
     remove(key){
         if(this.#keys.indexOf(key) != -1){
