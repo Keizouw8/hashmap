@@ -15,7 +15,7 @@ module.exports = class {
         return this.#values;
     }
     put(key, value){
-        if(this.#keys.indexOf(key) != -1){
+        if(this.#keys.indexOf(key) == -1){
             this.#keys.push(key);
             this.#values.push(value);
         }else{
@@ -32,7 +32,7 @@ module.exports = class {
         if(key){
             return this.#keys.indexOf(key) == -1 ? null : this.#values[this.#keys.indexOf(key)];
         }
-        return Object.assign.apply({},this.#keys.map((v, i)=>({[v]:this.#values[i]})));
+        return [this.#keys, this.#values];
     }
     generate(obj, obj2){
         if(obj2){
