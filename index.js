@@ -28,6 +28,20 @@ module.exports = class {
         if(key){
             return this.#keys.indexOf(key) == -1 ? null : this.#values[this.#keys.indexOf(key)];
         }
-        return Object.assign.apply({}, this.#keys.map( (v, i) => ( {[v]: this.#values[i]} ) ) );
+        return Object.assign.apply({},this.#keys.map((v, i)=>({[v]:this.#values[i]})));
+    }
+    generate(obj, obj2){
+        if(obj2){
+            if(obj instanceof Array && obj2 instanceof Array){
+                this.#keys = obj;
+                this.#values = obj2;
+            }
+        }else if(obj instanceof Object){
+            this.#keys = Object.keys(obj);
+            this.#values = Object.values(obj);
+        }else if(obj instanceof Array){
+            this.#keys = Array.from(obj.keys());
+            this.#values = obj;
+        }
     }
 }
