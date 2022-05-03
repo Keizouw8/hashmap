@@ -1,7 +1,7 @@
 {
   "name": "hashmap",
   "version": "1.0.0",
-  "description": "Ports Java HashMap functionality to JavaScript",
+  "description": "Port Java HashMap functionality to JavaScript",
   "main": "index.js",
   "scripts": {},
   "repository": {
