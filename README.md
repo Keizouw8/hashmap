@@ -25,11 +25,11 @@ Port Java HashMap functionality to JavaScript. Quick and easy to pickup with the
 Using npm:
 ```shell
 $ npm install -g npm
-$ npm install hashmap
+$ npm install java-hashmap
 ```
 In Node.js:
 ```js
-const HashMap = require("hashmap");
+const HashMap = require("java-hashmap");
 ```
 
 ## Creating a HashMap
